@@ -1,0 +1,54 @@
+// 边框
+@mixin border-dpr($color){
+  position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 1px solid $color;
+		width: 100%;
+		height: 100%;
+		border-radius: 37.5% / 100%;
+	}
+	@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio) {
+		&:after {
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			transform: scale(.5);
+		}
+	}
+	@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio) {
+		&:after {
+			top: -99.9%;
+    	left: -99.9%;
+			width: 300%;
+			height: 300%;
+			transform: scale(.3333);
+		}
+	}
+}
+// 下划线
+@mixin underlinepx($px, $color) {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform-origin: top left;
+		border-bottom: $px solid $color;
+		width: 100%;
+		transform: translate(0, 100%);
+		@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio) {
+			width: 200%;
+			transform: scale(.5)
+		}
+		@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio) {
+			width: 300%;
+			transform: scale(.333)
+		}
+	}
+}

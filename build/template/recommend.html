@@ -1,0 +1,45 @@
+<div class="content-remd">
+	<h3>推荐歌单</h3>
+	<ul class="remd-song">
+		<script type="text/template">
+			<% for(var i in obj.data) { %>
+			<li>
+				<a href="#<%= obj.data[i].href %>">
+					<div>
+						<img src="<%= obj.data[i].cover %>">
+						<span><%= obj.data[i].playCount %></span>
+					</div>
+					<p><%= obj.data[i].title %></p>
+				</a>
+			</li>
+			<% } %>
+		</script>
+	</ul>
+	<h3>最新音乐</h3>
+	<ul class="remd-newsong">
+		<script type="text/template">
+			<% for(var i in obj.result){ %>
+			<li>
+				<a href="#/m/song?detail=<%= obj.result[i].id %>">
+					<div class="song-info">
+						<p><%= obj.result[i].name %></p>
+						<p>
+							<% var artists = obj.result[i].song.artists %>
+							<% for (var j = 0, len = artists.length; j < len; j++){ %>
+								<%= artists[j].name %>
+								<% if (j < len - 1){ %>
+									 / 
+								<% } %>
+							<% } %>
+							- <%= obj.result[i].song.album.name %>
+						</p>
+					</div>
+					<div class="song-card">
+						<span></span>
+					</div>
+				</a>
+			</li>
+			<% } %>
+		</script>
+	</ul>
+</div>

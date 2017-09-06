@@ -1,0 +1,69 @@
+.content-hotsong {
+	
+	.hot-top {
+		position: relative;
+		padding-top: 38.9%;
+		background-size: contain;
+		background-image: url(../images/hot_music_bg.jpg);
+		&:after {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			content: "";
+			background-color: rgba(0,0,0,.2);
+		}
+		.top-content {
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			padding-left: 20px;
+			box-sizing: border-box;
+			justify-content: center;
+			flex-direction: column;
+			.top-icon {
+				background-image: url(../images/hot_song_list.png);
+				width: 4.4375rem;
+  			height: 2.09375rem;
+  			background-size: 4.4375rem 2.09375rem;
+			}
+			.top-time {
+				margin-top: 0.3125rem;
+				color: hsla(0,0%,100%,.8);
+				font-size: 12px;
+			}
+		}
+		
+	}
+	.hot-content {
+		li {
+			&:nth-child(1) {
+				.song-rank {
+					color: #df3436;
+				}
+			}
+			&:nth-child(2) {
+				.song-rank {
+					color: #df3436;
+				}
+			}
+			&:nth-child(3) {
+				.song-rank {
+					color: #df3436;
+				}
+			}
+		}
+	}
+	.hot-footer {
+		margin: 0.625rem auto;
+		text-align: center;
+		font-size: 14px;
+		color: #999;
+	}
+}

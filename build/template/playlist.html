@@ -1,0 +1,68 @@
+<div class="playlist">
+<div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div>
+<script type="text/template">
+<div class="playlist-wrap">
+	<div class="playlist-header">
+		<div class="bg" style="background-image: url(<%= obj.data.cover %>)"></div>
+		<div class="head-content">
+			<div class="cover">
+				<span class="lsthd_icon">歌单</span>
+				<img src="<%= obj.data.cover %>">
+				<span class="lsthd_num"><%= obj.data.times %></span>
+			</div>
+			<div class="headr">
+				<h3 class="brk thide2"><%= obj.data.title %></h3>
+				<a class="brk thide2" href="<%= obj.data.author.id %>">
+					<img src="<%= obj.data.author.pic %>">
+					<%= obj.data.author.name %>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="playlist-intro">
+		<div class="intro-tags">
+			标签：
+			<% for(var i in obj.data.tag) { %>
+				<span><%= obj.data.tag[i] %></span>
+			<% } %>
+		</div>
+		<div class="intro-content brk thide3">
+			简介：
+			<%= obj.data.introduct %>
+		</div>
+	</div>
+	<div class="playlist-list">
+		<p class="song-list">歌曲列表</p>
+		<ul class="songs">
+			<% for (var i in obj.data.music) { %>
+			<li>
+				<a href="#/m/song?id=<%= obj.data.music[i].id %>">
+					<div class="song-rank">
+						<span><%= +i + 1 %></span>
+					</div>
+					<div class="song-info">
+						<div class="info-content">
+							<p>
+								<span><%= obj.data.music[i].name %></span>
+							</p>
+							<p><%= obj.data.music[i].artists %> - <%= obj.data.music[i].album %></p>	
+						</div>
+						<div class="play-icon">
+							<span></span>
+						</div>
+					</div>
+					
+				</a>
+			</li>
+			<% } %>
+		</ul>
+	</div>
+</div>
+</script>
+</div>

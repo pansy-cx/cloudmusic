@@ -1,0 +1,159 @@
+.player-r {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30;
+	background-color: #333;
+	width: 100%;
+	height: 100%;
+	.player-content {
+		height: 90%;
+		overflow: hidden;
+		margin-bottom: 20px;
+		.player-body {
+			.body-up {
+				position: relative;
+				.img-point {
+					background-image: url(../images/player-point.png);
+					background-size: cover;
+					background-repeat: no-repeat;
+					width: 1.96875rem;
+					height: 3.09375rem;
+					margin: 0 auto;
+					transform: translate(30%, 0);
+					display: block;
+				}
+				.cover-round {
+					width: 7rem;
+					height: 7rem;
+					margin: 0 auto;
+					background-image: url(../images/player-round.png);
+					background-size: cover;
+					position: relative;
+					margin-top: -1.5rem;
+					z-index: -1;
+					.cover-mask {
+						background-color: #666;
+						position: absolute;
+						width: 70%;
+						height: 70%;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						display: block;
+						border-radius: 50%;
+						img {
+							width: 100%;
+							height: 100%;
+							border-radius: 50%;
+						}
+					}
+				}
+				.player-btn {
+					display: block;
+					position: absolute;
+					font-size: 48px;
+					color: #eee;
+					top: 3.5rem;
+					left: 50%;
+					transform: translate(-50%, 50%);
+					text-align: center;
+				}
+			}
+			.player-name {
+				height: 1.4rem;
+				line-height: 1.4rem;
+				color: #eee;
+				font-size: 16px;
+				text-align: center;
+			}
+			.lrc {
+				position: relative;
+				color: #aaa;
+				font-size: 14px;
+				overflow: hidden;
+				line-height: 2;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				text-align: center;
+				z-index: -1;
+				p {
+					&.active {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.player-audio {
+		width: 100%;
+		position: relative;
+		.process {
+			display: flex;
+			align-items: center;
+			margin: 0 10px;
+			color: #eee;
+			.process-bar {
+				position: relative;
+				width: 100%;
+				margin: 0 0.5rem;
+				.bar {
+					height: 0.0625rem;
+					border-radius: 5px;
+				}
+				.left {
+					float: left;
+					width: 0;
+					background-color: red;
+				}
+				.right {
+					float: right;
+					width: 100%;
+					background-color: rgba(255, 255, 255, .5);
+				}
+				.process-round {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translate(0, -50%);
+					width: 0.4rem;
+					height: 0.4rem;
+					border-radius: 50%;
+					background-color: #fff;
+					&:after {
+						content: "";
+						width: 0.125rem;
+						height: 0.125rem;
+						display: block;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						border-radius: 50%;
+						background-color: red;
+					}
+				}
+			}
+		}
+	}
+	.player-bg {
+		position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    z-index: -2;
+    filter: blur(30px);
+    &:after {
+    	content: "";
+	    background-color: rgba(0, 0, 0, 0.6);
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+    }
+	}
+}

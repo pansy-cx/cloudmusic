@@ -1,0 +1,36 @@
+<div class="content-hotsong">
+	<script type="text/template">
+		<div class="hot-top">
+			<div class="top-content">
+				<div class="top-icon"></div>
+				<div class="top-time"><%= _.date(obj.data.updateTime, 'MM月dd日') %></div>
+			</div>
+		</div>
+		<ul class="songs hot-content">
+			<% for(var i in obj.data.song) { %>
+				<li>
+					<a href="<%= obj.data.song[i].url %>">
+						<div class="song-rank">
+							<span><%= obj.data.song[i].rank %></span>
+						</div>
+						<div class="song-info">
+							<div class="info-content">
+								<p>
+									<span><%= obj.data.song[i].name %></span>
+									<span><%= obj.data.song[i].alias %></span>
+								</p>
+								<p><%= obj.data.song[i].artists %> - <%= obj.data.song[i].album %></p>
+							</div>
+							<div class="play-icon">
+								<span></span>
+							</div>
+						</div>
+					</a>
+				</li>
+			<% } %>
+		</script>
+	</ul>
+	<div class="hot-footer">
+		<span>查看完整榜单 ></span>
+	</div>
+</div>

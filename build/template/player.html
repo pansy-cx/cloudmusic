@@ -1,0 +1,51 @@
+<div class="player-r">
+	<div class="player-content">
+		<div class="player-body">
+			<div class="body-up">
+				<div class="img-point"></div> 
+				<div class="cover-round">
+					<div class="cover-mask">
+						<script type="text/template">
+							<img class="cover-pic" src="<%= obj.songs[0].al.picUrl %>">
+						</script>
+					</div>
+				</div>
+				<i class="player-btn icon-font">&#x1004;</i>
+			</div>
+			<div class="player-name">
+				<script type="text/template">
+					<span>
+						<%= obj.songs[0].name %> - 
+						<% for (var i = 0, len = obj.songs[0].ar.length; i < len; i++) { %>
+							<%= obj.songs[0].ar[i].name %>
+							<% if (i < len - 1) { %>
+								/
+							<% } %>
+						<% } %>
+					</span>
+				</script>
+			</div>
+			<div class="lrc">
+				<div class="body-lrc">
+					歌词加载中...
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="player-audio">
+		<div class="player-audio-r">
+			<script type="text/template">
+				<audio src="<%= obj.data[0].url %>"></audio>
+			</script>
+		</div>
+		<div class="process">
+			<span class="current-time">00:00</span>
+			<div class="process-bar">
+				<div class="bar left"></div>
+				<div class="bar right"></div>
+				<div class="process-round"></div>
+			</div>
+			<span class="total-time">00:00</span>
+		</div>
+	</div>
+</div>
